@@ -3,130 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project - Phantom</title>
+    <title>Phantom Project</title>
     <style>
+        /* Algemene stijlen */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
-            color: #333;
         }
-        header {
-            background: #333;
-            color: #fff;
-            padding: 10px 20px;
-            text-align: center;
-        }
+
         nav {
-            background: #444;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
+            background-color: #333;
+            color: white;
+            height: 50px; /* Maak de balk kleiner */
+            line-height: 50px; /* Centreer tekst verticaal */
+            display: flex;
+            justify-content: center;
         }
+
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
+            padding: 0 15px;
+            font-size: 14px; /* Verklein het lettertype */
         }
+
         nav a:hover {
             text-decoration: underline;
         }
-        .main-content {
-            padding: 20px;
-        }
-        .main-content h2 {
-            text-align: center;
-            margin-bottom: 20px;
-            color: #444;
-        }
-        .section {
-            margin-bottom: 30px;
-        }
-        .section img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-            margin: 20px auto;
-            border-radius: 5px;
-        }
-        .section p {
-            margin: 10px 0;
-            text-align: justify;
-        }
-        .highlight {
-            background: #f4f4f4;
-            padding: 15px;
-            border-left: 5px solid #333;
-            margin: 20px 0;
-        }
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
+
+        @media (max-width: 768px) {
+            nav {
+                height: 50px; /* Zorg dat de balk op mobiel kleiner blijft */
+                line-height: 50px;
+            }
+
+            nav a {
+                font-size: 12px; /* Nog kleiner voor mobiele apparaten */
+            }
         }
 
-        /* Responsive Design */
-        @media (max-width: 600px) {
-            header {
-                padding: 3px 5px; /* Vermindert de ruimte rond de tekst */
-                font-size: 12px; /* Kleinere tekstgrootte */
-            }
-            nav {
-                padding: 3px; /* Vermindert de ruimte rond de links */
-                font-size: 10px; /* Kleinere tekstgrootte voor de navigatie */
-            }
-            nav a {
-                margin: 0 3px; /* Vermindert de ruimte tussen links */
-            }
+        .container {
+            padding: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .info, .advertenties {
+            display: inline-block;
+            width: 45%;
+            vertical-align: top;
+            margin: 20px;
+        }
+
+        .info {
+            text-align: left;
+        }
+
+        .advertenties {
+            text-align: right;
+        }
+
+        .advertenties img {
+            max-width: 100%;
+            height: auto;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Project - Phantom</h1>
-    </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="over.html">Over ons</a>
-        <a href="fotos.html">Foto's</a>
-        <a href="project.html">Project</a>
+        <a href="#">Home</a>
+        <a href="#">Over ons</a>
+        <a href="#">Foto's</a>
+        <a href="#">Project</a>
     </nav>
-    <div class="main-content">
-        <h2>Welkom bij ons project</h2>
-        <div class="section">
-            <h3>Wat is Project Phantom?</h3>
-            <p>
-                Project Phantom is een innovatief initiatief ontworpen om ... . 
-                Ons doel is om ... . 
-            </p>
+
+    <div class="container">
+        <h1>Welkom op de officiële website van project Phantom</h1>
+        <div class="info">
+            <h2>INFO</h2>
+            <p>...</p>
         </div>
-        <div class="section">
-            <h3>Hoe werken we?</h3>
-            <img src="project-work.jpg" alt="Project Uitleg">
-            <p>
-                ...
-            </p>
-        </div>
-        <div class="section highlight">
-            <h3>Belangrijkste resultaten</h3>
-            <p>
-                - [Resultaat 1]<br>
-                - [Resultaat 2]<br>
-                - [Resultaat 3]
-            </p>
-        </div>
-        <div class="section">
-            <h3>Wat komt hierna?</h3>
-            <p>
-                ...
-            </p>
+        <div class="advertenties">
+            <h2>Advertenties:</h2>
+            <img src="https://via.placeholder.com/300x150" alt="Advertentie">
         </div>
     </div>
+
+    <footer>
+        &copy; 2024 Phantom Website. Alle rechten voorbehouden.
+    </footer>
 </body>
 </html>
