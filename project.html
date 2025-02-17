@@ -4,24 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Phantom - Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
         }
         header {
-            background-color: #444;
+            background-color: #0077b6;
             color: white;
             text-align: center;
-            padding: 10px 0;
-            font-size: 18px;
+            padding: 15px 0;
+            font-size: 22px;
+            font-weight: bold;
         }
         nav {
-            background-color: #333;
+            background-color: #023e8a;
             color: white;
-            height: 50px; /* Maak de balk kleiner */
-            line-height: 50px; /* Centreer tekst verticaal */
+            height: 50px;
             display: flex;
             justify-content: center;
         }
@@ -29,49 +32,61 @@
             color: white;
             text-decoration: none;
             padding: 0 15px;
-            font-size: 14px; /* Verklein het lettertype */
+            font-size: 16px;
         }
         nav a:hover {
             text-decoration: underline;
         }
-        @media (max-width: 768px) {
-            nav {
-                height: 50px; /* Zorg dat de balk op mobiel kleiner blijft */
-                line-height: 50px;
-            }
-            nav a {
-                font-size: 12px; /* Nog kleiner voor mobiele apparaten */
-            }
-        }
         .container {
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
             padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
-        footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 5px 0; /* Adjusted padding */
-            font-size: 9px; /* Adjusted font size */
-        }
-        .info, .advertenties {
-            display: inline-block;
-            width: 45%;
-            vertical-align: top;
-            margin: 20px;
+        .content-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
         }
         .info {
-            text-align: left;
+            flex: 2;
         }
         .advertenties {
-            text-align: right;
+            flex: 1;
+            text-align: center;
         }
         .advertenties img {
             max-width: 100%;
             height: auto;
+            border-radius: 5px;
+        }
+        .cta-button {
+            display: inline-block;
+            background: #0077b6;
+            color: white;
+            padding: 12px 20px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background 0.3s ease-in-out;
+            margin-top: 10px;
+        }
+        .cta-button:hover {
+            background: #023e8a;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
@@ -85,29 +100,32 @@
         <a href="fotos.html">Foto's</a>
         <a href="project.html">Project</a>
     </nav>
-
+    
     <div class="container">
         <h1>Project Phantom: Jouw startpunt voor duurzame windenergie</h1>
-        <div class="info">
-            <h2>Zelf groene energie opwekken met een windmolen in je tuin!</h2>
-            <p>Wil je je eigen duurzame energie opwekken en bijdragen aan een groenere toekomst? Met een windmolen in je achtertuin wordt dit mogelijk. Maar voordat je de stap zet, is het belangrijk om te weten of jouw locatie geschikt is. Daarom bieden wij een uitgebreide windsituatie-analyse aan.</p>
-            <p>Hoe werkt het?<br>
-            We plaatsen een windmeter op jouw gewenste locatie, bijvoorbeeld in je achtertuin. Deze meet gedurende een bepaalde periode continu de windsnelheid en -omstandigheden. Na afloop van de meetperiode analyseren wij de verzamelde gegevens en berekenen bijvoorbeeld de gemiddelde windsnelheid per week of maand.</p>
-            <p>De resultaten worden overzichtelijk weergegeven in duidelijke grafieken. Zo krijg je een helder beeld van de windcondities op jouw locatie en weet je precies wanneer er sprake is van veel of juist weinig wind.</p>
-            <p>Is jouw locatie geschikt?<br>
-            Op basis van de analyse bepalen we of een windmolen op jouw locatie rendabel is. Blijkt de windsituatie gunstig? Dan kun je direct stappen zetten richting je eigen duurzame energieopwekking met een windmolen.</p>
-            <p>Waarom kiezen voor onze aanpak?<br>
-            ✔ Nauwkeurige windmetingen<br>
-            ✔ Overzichtelijke en heldere analyses<br>
-            ✔ Professioneel advies over de geschiktheid van jouw locatie</p>
-            <p>Start vandaag nog met het verduurzamen van je energievoorziening en ontdek of een windmolen in jouw achtertuin de juiste keuze is! Neem contact met ons op voor meer informatie.</p>
-        </div>
-        <div class="advertenties">
-            <h2>Advertenties:</h2>
-            <img src="https://via.placeholder.com/300x150" alt="Advertentie">
+        <div class="content-wrapper">
+            <div class="info">
+                <h2>Zelf groene energie opwekken met een windmolen in je tuin!</h2>
+                <p>Wil je je eigen duurzame energie opwekken en bijdragen aan een groenere toekomst? Met een windmolen in je achtertuin wordt dit mogelijk. Maar voordat je de stap zet, is het belangrijk om te weten of jouw locatie geschikt is. Daarom bieden wij een uitgebreide windsituatie-analyse aan.</p>
+                <p><strong>Hoe werkt het?</strong><br>
+                We plaatsen een windmeter op jouw gewenste locatie, bijvoorbeeld in je achtertuin. Deze meet gedurende een bepaalde periode continu de windsnelheid en -omstandigheden. Na afloop van de meetperiode analyseren wij de verzamelde gegevens en berekenen bijvoorbeeld de gemiddelde windsnelheid per week of maand.</p>
+                <p>De resultaten worden overzichtelijk weergegeven in duidelijke grafieken. Zo krijg je een helder beeld van de windcondities op jouw locatie en weet je precies wanneer er sprake is van veel of juist weinig wind.</p>
+                <p><strong>Is jouw locatie geschikt?</strong><br>
+                Op basis van de analyse bepalen we of een windmolen op jouw locatie rendabel is. Blijkt de windsituatie gunstig? Dan kun je direct stappen zetten richting je eigen duurzame energieopwekking met een windmolen.</p>
+                <p><strong>Waarom kiezen voor onze aanpak?</strong><br>
+                ✔ Nauwkeurige windmetingen<br>
+                ✔ Overzichtelijke en heldere analyses<br>
+                ✔ Professioneel advies over de geschiktheid van jouw locatie</p>
+                <p>Start vandaag nog met het verduurzamen van je energievoorziening en ontdek of een windmolen in jouw achtertuin de juiste keuze is!</p>
+                <a href="contact.html" class="cta-button">Neem contact op</a>
+            </div>
+            <div class="advertenties">
+                <h2>Advertenties:</h2>
+                <img src="https://via.placeholder.com/300x150" alt="Advertentie">
+            </div>
         </div>
     </div>
-
+    
     <footer>
         &copy; 2025 Phantom Website. Alle rechten voorbehouden.
     </footer>
