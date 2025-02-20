@@ -32,15 +32,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $mail->send();
         
-        // JavaScript-popup voor succesmelding
+        // JavaScript-popup en redirect naar homepagina
         echo "<script>
             alert('Je bericht is succesvol verzonden!');
-            window.location.href='contact.html';
+            window.location.href='index.html'; // Na OK naar de homepagina
         </script>";
     } catch (Exception $e) {
-        echo "Er is een fout opgetreden: {$mail->ErrorInfo}";
+        echo "<script>
+            alert('Er is iets misgegaan: {$mail->ErrorInfo}');
+            window.location.href='contact.html'; // Bij fout terug naar contactpagina
+        </script>";
     }
 } else {
-    echo "Ongeldige aanvraag.";
+    echo "<script>
+        alert('Ongeldige aanvraag.');
+        window.location.href='contact.html';
+    </script>";
 }
 ?>
