@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars($_POST["email"]);
     $bericht = htmlspecialchars($_POST["bericht"]);
 
-    $ontvanger = "jouw_email@domein.com"; // Vervang met jouw e-mailadres
+    $ontvanger = "VaDr121007@leerling.mosa-rt.be"; // Vervang met jouw e-mailadres
     $onderwerp = "Nieuw bericht van contactformulier";
     $headers = "From: $email" . "\r\n" .
                "Reply-To: $email" . "\r\n" .
