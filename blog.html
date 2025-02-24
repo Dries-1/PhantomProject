@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blog - Phantom</title>
+    <title>Blog - Phantom</title>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -13,87 +13,127 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+            background-color: #f9f9f9;
         }
+
         header {
             background: #333;
             color: #fff;
-            padding: 10px 20px;
+            padding: 20px 0;
             text-align: center;
         }
+
         nav {
             background: #444;
-            color: #fff;
             padding: 10px;
             text-align: center;
         }
+
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-weight: bold;
         }
+
         nav a:hover {
             text-decoration: underline;
         }
-        .gallery {
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .blog-posts {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
+        }
+
+        .post {
+            background: #fff;
             padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-        .photo {
-            text-align: center;
-            background: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ddd;
-        }
-        .photo img {
+
+        .post img {
             width: 100%;
-            max-width: 300px;
+            border-radius: 10px;
             height: auto;
-            border-radius: 5px;
         }
+
+        .post h2 {
+            color: #333;
+        }
+
+        .post p {
+            color: #666;
+        }
+
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            background: #333;
+            color: #fff;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            background: #555;
+        }
+
         footer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 5px 0; /* Adjusted padding */
-            font-size: 9px; /* Adjusted font size */
+            padding: 10px 0;
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Foto's - Phantom</h1>
+        <h1>BLOG - Phantom</h1>
     </header>
+
     <nav>
         <a href="index.html">Home</a>
         <a href="over.html">Over ons</a>
-        <a href="blog.html">blog</a>
+        <a href="blog.html">Blog</a>
         <a href="project.html">Project</a>
         <a href="contact.html">Contact</a>
     </nav>
-    <section class="gallery">
-        <div class="photo">
-            <img src="foto1.jpg" alt="Foto 1">
-            <p>Beschrijving</p>
-        </div>
-        <div class="photo">
-            <img src="foto2.jpg" alt="Foto 2">
-            <p>Beschrijving</p>
-        </div>
-        <div class="photo">
-            <img src="foto3.jpg" alt="Foto 3">
-            <p>Beschrijving</p>
-        </div>
-        <div class="photo">
-            <img src="foto4.jpg" alt="Foto 4">
-            <p>Beschrijving</p>
-        </div>
-    </section>
+
+    <div class="container">
+        <section class="blog-posts">
+            <div class="post">
+                <img src="foto1.jpg" alt="Blogpost 1">
+                <h2>Titel van Blogpost 1</h2>
+                <p>Korte introductie of samenvatting van de blogpost...</p>
+                <a href="#" class="read-more">Lees verder</a>
+            </div>
+
+            <div class="post">
+                <img src="foto2.jpg" alt="Blogpost 2">
+                <h2>Titel van Blogpost 2</h2>
+                <p>Korte introductie of samenvatting van de blogpost...</p>
+                <a href="#" class="read-more">Lees verder</a>
+            </div>
+
+            <div class="post">
+                <img src="foto3.jpg" alt="Blogpost 3">
+                <h2>Titel van Blogpost 3</h2>
+                <p>Korte introductie of samenvatting van de blogpost...</p>
+                <a href="#" class="read-more">Lees verder</a>
+            </div>
+        </section>
+    </div>
+
     <footer>
         &copy; 2025 Phantom. Alle rechten voorbehouden.
     </footer>
