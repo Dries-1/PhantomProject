@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Phantom</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> 
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <style>
@@ -12,8 +12,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            line-height: 1.6;
             background-color: #f9f9f9;
+            line-height: 1.6;
         }
 
         header {
@@ -41,50 +41,36 @@
         }
 
         .container {
-            max-width: 1200px;
-            margin: 20px auto;
+            max-width: 800px;
+            margin: 40px auto;
             padding: 0 20px;
-        }
-
-        .blog-posts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .post {
             background: #fff;
-            padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        .post img {
+        .blog-post img {
             width: 100%;
-            border-radius: 10px;
-            height: auto;
+            border-radius: 10px 10px 0 0;
         }
 
-        .post h2 {
+        .blog-post {
+            padding: 20px;
+        }
+
+        .blog-post h1 {
             color: #333;
+            margin-top: 0;
         }
 
-        .post p {
-            color: #666;
+        .blog-post p {
+            color: #555;
         }
 
-        .read-more {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 10px 15px;
-            background: #333;
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        .read-more:hover {
-            background: #555;
+        .blog-post .date {
+            font-size: 0.9em;
+            color: #888;
+            margin-bottom: 20px;
         }
 
         footer {
@@ -110,28 +96,20 @@
     </nav>
 
     <div class="container">
-        <section class="blog-posts">
-            <div class="post">
-                <img src="foto1.jpg" alt="Blogpost 1">
-                <h2>Titel van Blogpost 1</h2>
-                <p>Korte introductie of samenvatting van de blogpost...</p>
-                <a href="#" class="read-more">Lees verder</a>
-            </div>
-
-            <div class="post">
-                <img src="foto2.jpg" alt="Blogpost 2">
-                <h2>Titel van Blogpost 2</h2>
-                <p>Korte introductie of samenvatting van de blogpost...</p>
-                <a href="#" class="read-more">Lees verder</a>
-            </div>
-
-            <div class="post">
-                <img src="foto3.jpg" alt="Blogpost 3">
-                <h2>Titel van Blogpost 3</h2>
-                <p>Korte introductie of samenvatting van de blogpost...</p>
-                <a href="#" class="read-more">Lees verder</a>
-            </div>
-        </section>
+        <article class="blog-post">
+            <img src="foto1.jpg" alt="Hoofdafbeelding van de blogpost">
+            <h1>Titel van de Blogpost</h1>
+            <p class="date">Gepubliceerd op 24 februari 2025 door Phantom</p>
+            <p>
+                Dit is de inleiding van de blogpost, waar je de lezer een kort overzicht geeft van het onderwerp van de blog.
+            </p>
+            <p>
+                Hier kun je beginnen met de hoofdtekst van de blogpost. Schrijf duidelijke paragrafen en zorg ervoor dat de tekst interessant en goed leesbaar is. Voeg eventueel kopjes toe als de tekst lang is, en gebruik afbeeldingen of citaten om het visueel aantrekkelijk te maken.
+            </p>
+            <p>
+                Tot slot, eindig je blogpost met een conclusie of een oproep tot actie, bijvoorbeeld: "Wat vind jij van dit onderwerp? Laat een reactie achter hieronder!"
+            </p>
+        </article>
     </div>
 
     <footer>
