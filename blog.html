@@ -14,6 +14,32 @@
             padding: 0;
             background-color: #f5f5f5;
             line-height: 1.6;
+            display: flex;
+            justify-content: center;
+        }
+
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        .sidebar img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .content {
+            max-width: 900px;
+            background: #fff;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
         header {
@@ -44,15 +70,6 @@
             color: #ff9800;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
         .blog-post img {
             width: 80%;
             display: block;
@@ -77,26 +94,14 @@
             margin-bottom: 20px;
         }
 
-        .sfeerbeelden {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .sfeerbeelden img {
-            width: 30%;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-
         footer {
             background: #333;
             color: #fff;
             text-align: center;
             padding: 15px 0;
             font-size: 12px;
+            width: 100%;
+            position: relative;
         }
     </style>
 </head>
@@ -113,7 +118,13 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <div class="container">
+    <div class="sidebar">
+        <img src="sfeerbeeld1.jpg" alt="Sfeerbeeld 1">
+        <img src="sfeerbeeld2.jpg" alt="Sfeerbeeld 2">
+        <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
+    </div>
+
+    <div class="content">
         <article class="blog-post">
             <img src="afbeeldingblog.jpeg" alt="Hoofdafbeelding van de blogpost">
             <h1>Titel van de blogpost</h1>
@@ -128,12 +139,6 @@
                 Tot slot...
             </p>
         </article>
-
-        <div class="sfeerbeelden">
-            <img src="sfeerbeeld1.jpg" alt="Sfeerbeeld 1">
-            <img src="sfeerbeeld2.jpg" alt="Sfeerbeeld 2">
-            <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
-        </div>
     </div>
 
     <footer>
