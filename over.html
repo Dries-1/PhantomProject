@@ -20,29 +20,30 @@
 
         /* Header */
         header {
-            background: #38761d; /* Diepgroene kleur */
-            color: #fff;
+            background: #fff; /* Witte achtergrond */
+            color: #333;
             padding: 20px;
             text-align: center;
             font-size: 24px;
             font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         /* Navigatiebalk */
         nav {
-            background: #6aa84f; /* Groene tint */
+            background: #ddd; /* Lichtere tint */
             padding: 15px;
             text-align: center;
         }
         nav a {
-            color: #fff;
+            color: #333;
             text-decoration: none;
             font-weight: bold;
             margin: 0 15px;
             transition: color 0.3s;
         }
         nav a:hover {
-            color: #f9f9f9;
+            color: #38761d;
             text-decoration: underline;
         }
 
@@ -69,15 +70,17 @@
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
+            gap: 20px; /* Ruimte tussen kaders */
         }
         .text-box {
             background: #fff;
             border-left: 5px solid #38761d;
-            padding: 20px;
+            padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            box-sizing: border-box;
+            width: 80%;
+            max-width: 600px;
             border-radius: 8px;
             transition: transform 0.3s;
         }
@@ -89,8 +92,12 @@
             height: 150px;
             object-fit: cover;
             margin-right: 20px;
-            border-radius: 50%;
+            border-radius: 8px;
             border: 3px solid #6aa84f;
+        }
+        .text-box .text {
+            flex: 1;
+            text-align: left;
         }
         .text-box .text h3 {
             color: #38761d;
@@ -99,7 +106,7 @@
 
         /* Footer */
         footer {
-            background: #38761d;
+            background: #333;
             color: #fff;
             text-align: center;
             padding: 10px 0;
