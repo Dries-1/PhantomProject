@@ -8,20 +8,16 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Algemene stijl */
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
             background: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
         }
 
+        /* Header */
         header {
             background: #2a6d4f; /* Groene header kleur */
             color: #fff;
@@ -31,6 +27,28 @@
             font-weight: bold;
         }
 
+        /* Navigatiebalk */
+        nav {
+            background: #1f4c3d; /* Groene nav kleur */
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 8px 12px;
+            transition: background 0.3s, border-radius 0.3s;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #38761d; /* Groene hover kleur */
+            border-radius: 5px;
+        }
+
+        /* Hoofdinhoud */
         .container {
             display: flex;
             max-width: 1200px;
@@ -39,27 +57,7 @@
             flex: 1;
         }
 
-        nav {
-            background: #1f4c3d; /* Groene nav kleur */
-            padding: 15px;
-            width: 200px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 10px 0;
-            font-weight: bold;
-            transition: color 0.3s;
-            display: block;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
+        /* Content gedeelte */
         .content-wrapper {
             display: flex;
             align-items: stretch;
@@ -67,19 +65,19 @@
             flex-grow: 1;
         }
 
-        .content, .sidebar {
-            padding: 20px;
-            border-radius: 10px;
-        }
-
         .content {
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
             flex-grow: 2;
-            background: #fff; /* Content achtergrond wit */
         }
 
+        /* Sidebar */
         .sidebar {
             width: 300px;
-            background: #e1f0e3; /* Lichte groene sidebar */
+            background: #ddd;
+            padding: 20px;
+            border-radius: 10px;
         }
 
         .sidebar img {
@@ -89,14 +87,9 @@
             object-fit: cover;
         }
 
-        .blog-post img {
-            width: 100%;
-            display: block;
-            margin: 20px auto;
-        }
-
+        /* Blog post */
         .blog-post h1 {
-            color: #2a6d4f; /* Groene titel kleur */
+            color: #2a6d4f; /* Groene tekstkleur voor de titel */
             text-align: center;
         }
 
@@ -112,6 +105,7 @@
             margin-bottom: 20px;
         }
 
+        /* Footer */
         footer {
             background: #2a6d4f; /* Groene footer kleur */
             color: #fff;
