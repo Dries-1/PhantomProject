@@ -82,9 +82,10 @@
             display: flex;
             align-items: center;
             width: 80%;
-            max-width: 800px; /* Zelfde als teamfoto */
+            max-width: 800px;
             border-radius: 8px;
             transition: transform 0.3s;
+            min-height: 180px; /* Maakt de hoogte consistent */
         }
         .text-box:hover {
             transform: scale(1.02);
@@ -170,7 +171,7 @@
     </footer>
 
     <script>
-        function adjustTextBoxWidth() {
+        function adjustTextBoxSize() {
             var teamImage = document.getElementById('teamImage');
             var textBoxes = document.querySelectorAll('.text-box');
 
@@ -179,11 +180,12 @@
             var imageWidth = teamImage.getBoundingClientRect().width;
             textBoxes.forEach(function(box) {
                 box.style.width = imageWidth + 'px';
+                box.style.minHeight = (teamImage.clientHeight / 3) + 'px'; // Verdeel hoogte evenredig
             });
         }
 
-        window.onload = adjustTextBoxWidth;
-        window.onresize = adjustTextBoxWidth;
+        window.onload = adjustTextBoxSize;
+        window.onresize = adjustTextBoxSize;
     </script>
 </body>
 </html>
