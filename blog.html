@@ -8,7 +8,6 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <style>
-        /* Algemene stijl */
         * {
             margin: 0;
             padding: 0;
@@ -17,14 +16,12 @@
 
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
             background: #f4f4f4;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
 
-        /* Header */
         header {
             background: #333;
             color: #fff;
@@ -34,7 +31,6 @@
             font-weight: bold;
         }
 
-        /* Layout container */
         .container {
             display: flex;
             max-width: 1200px;
@@ -43,7 +39,6 @@
             flex: 1;
         }
 
-        /* Navigatiebalk */
         nav {
             background: #444;
             padding: 15px;
@@ -62,10 +57,9 @@
         }
 
         nav a:hover {
-            color: #ff9800;
+            text-decoration: underline;
         }
 
-        /* Content en Sidebar */
         .content-wrapper {
             display: flex;
             align-items: stretch;
@@ -74,22 +68,18 @@
         }
 
         .content, .sidebar {
-            background: #fff;
             padding: 20px;
-            border: 2px solid #ddd;
-            display: flex;
-            flex-direction: column;
+            border-radius: 0px;
         }
 
         .content {
             flex-grow: 2;
+            background: #f4f4f4;
         }
 
         .sidebar {
             width: 300px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+            background: #ddd;
         }
 
         .sidebar img {
@@ -99,7 +89,6 @@
             object-fit: cover;
         }
 
-        /* Blogpost */
         .blog-post img {
             width: 100%;
             display: block;
@@ -123,7 +112,6 @@
             margin-bottom: 20px;
         }
 
-        /* Footer */
         footer {
             background: #333;
             color: #fff;
