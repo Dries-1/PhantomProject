@@ -61,7 +61,7 @@
             border: 1px solid #ddd;
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 80%;
+            width: 80%; /* Breedte instellen op 80% van de pagina */
             margin: 10px 0;
             display: flex;
             align-items: center;
@@ -103,7 +103,7 @@
     <div class="main">
         <h2>Wie zijn wij?</h2>
 
-        <img src="teamFotoPhantom.jpg" alt="Team Phantom">
+        <img src="teamFotoPhantom.jpg" alt="Team Phantom" id="teamImage">
 
         <div class="text-boxes">
             <div class="text-box">
@@ -137,5 +137,18 @@
     <footer>
         &copy; 2025 Phantom. Alle rechten voorbehouden.
     </footer>
+
+    <script>
+        // JavaScript om de breedte van de tekstboxen gelijk te maken aan de afbeelding erboven
+        window.onload = function() {
+            var teamImage = document.getElementById('teamImage');
+            var textBoxes = document.querySelectorAll('.text-box');
+            var imageWidth = teamImage.offsetWidth;
+
+            textBoxes.forEach(function(box) {
+                box.style.width = imageWidth + 'px';
+            });
+        }
+    </script>
 </body>
 </html>
