@@ -81,11 +81,12 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             display: flex;
             align-items: center;
-            width: 80%;
-            max-width: 800px;
             border-radius: 8px;
             transition: transform 0.3s;
-            min-height: 180px; /* Maakt de hoogte consistent */
+            width: 80%;
+            max-width: 800px;
+            min-height: 180px; /* Standaardhoogte */
+            box-sizing: border-box;
         }
         .text-box:hover {
             transform: scale(1.02);
@@ -171,21 +172,20 @@
     </footer>
 
     <script>
-        function adjustTextBoxSize() {
+        function adjustTextBoxWidth() {
             var teamImage = document.getElementById('teamImage');
             var textBoxes = document.querySelectorAll('.text-box');
 
             if (!teamImage) return;
             
-            var imageWidth = teamImage.getBoundingClientRect().width;
+            var imageWidth = teamImage.clientWidth;
             textBoxes.forEach(function(box) {
                 box.style.width = imageWidth + 'px';
-                box.style.minHeight = (teamImage.clientHeight / 3) + 'px'; // Verdeel hoogte evenredig
             });
         }
 
-        window.onload = adjustTextBoxSize;
-        window.onresize = adjustTextBoxSize;
+        window.onload = adjustTextBoxWidth;
+        window.onresize = adjustTextBoxWidth;
     </script>
 </body>
 </html>
