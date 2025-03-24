@@ -52,8 +52,8 @@
         }
         .text-boxes {
             display: flex;
-            justify-content: center;
-            gap: 20px;
+            flex-direction: column; /* Zet de elementen verticaal onder elkaar */
+            align-items: center;
             margin-top: 20px;
         }
         .text-box {
@@ -61,7 +61,19 @@
             border: 1px solid #ddd;
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 30%;
+            width: 80%;
+            margin: 10px 0;
+            display: flex;
+            align-items: center;
+        }
+        .text-box img {
+            width: 150px; /* Stel de grootte van de afbeelding in */
+            height: 150px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+        .text-box .text {
+            flex: 1;
         }
         footer {
             position: fixed;
@@ -71,8 +83,8 @@
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 5px 0; /* Adjusted padding */
-            font-size: 9px; /* Adjusted font size */
+            padding: 5px 0;
+            font-size: 9px;
         }
     </style>
 </head>
@@ -90,26 +102,34 @@
     </nav>
     <div class="main">
         <h2>Wie zijn wij?</h2>
-        <p>Dit is de Over ons pagina met informatie over ons team.</p>
 
         <img src="teamFotoPhantom.jpg" alt="Team Phantom">
 
         <div class="text-boxes">
             <div class="text-box">
-                <h3>Johnatan</h3>
-                <p>uitlezen van sensoren</p>
-                <p>Software-updates en verzenden van data</p>
+                <img src="johnatanFoto.jpg" alt="Johnatan">
+                <div class="text">
+                    <h3>Johnatan</h3>
+                    <p>Uitlezen van sensoren</p>
+                    <p>Software-updates en verzenden van data</p>
+                </div>
             </div>
             <div class="text-box">
-                <h3>Nicky</h3>
-                <p>Data analyseren</p>
-                <p>opslag en verwerking van de meetgegevens</p>
+                <img src="nickyFoto.jpg" alt="Nicky">
+                <div class="text">
+                    <h3>Nicky</h3>
+                    <p>Data analyseren</p>
+                    <p>Opslag en verwerking van de meetgegevens</p>
+                </div>
             </div>
             <div class="text-box">
-                <h3>Dries</h3>
-                <p>hardwareconfiguratie</p>
-                <p>opstelling en instalatie</p>
-                <p>website</p>
+                <img src="driesFoto.jpg" alt="Dries">
+                <div class="text">
+                    <h3>Dries</h3>
+                    <p>Hardwareconfiguratie</p>
+                    <p>Opstelling en installatie</p>
+                    <p>Website</p>
+                </div>
             </div>
         </div>
     <div style="height: 500px;"></div>
