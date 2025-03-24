@@ -48,7 +48,7 @@
         }
         .text-boxes {
             display: flex;
-            flex-direction: column; /* Zet de elementen verticaal onder elkaar */
+            flex-direction: column;
             align-items: center;
             margin-top: 20px;
         }
@@ -57,12 +57,12 @@
             border: 1px solid #ddd;
             padding: 15px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
             display: flex;
             align-items: center;
+            box-sizing: border-box; /* Zorgt ervoor dat padding en border meetellen */
         }
         .text-box img {
-            width: 150px; /* Stel de grootte van de afbeelding in */
+            width: 150px;
             height: 150px;
             object-fit: cover;
             margin-right: 20px;
@@ -90,10 +90,10 @@
     <nav>
         <a href="index.html">Home</a>
         <a href="over.html">Over ons</a>
-        <a href="blog.html">blog</a>
+        <a href="blog.html">Blog</a>
         <a href="project.html">Project</a>
         <a href="contact.html">Contact</a>
-        <a href="winddatapage.html">winddata</a>
+        <a href="winddatapage.html">Winddata</a>
     </nav>
     <div class="main">
         <h2>Wie zijn wij?</h2>
@@ -137,7 +137,11 @@
         function adjustTextBoxWidth() {
             var teamImage = document.getElementById('teamImage');
             var textBoxes = document.querySelectorAll('.text-box');
-            var imageWidth = teamImage.offsetWidth;
+
+            if (!teamImage) return; // Voorkomt fout als afbeelding niet geladen is
+            
+            var imageRect = teamImage.getBoundingClientRect();
+            var imageWidth = imageRect.width;
 
             textBoxes.forEach(function(box) {
                 box.style.width = imageWidth + 'px';
