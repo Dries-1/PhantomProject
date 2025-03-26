@@ -25,12 +25,11 @@
             width: 200px;
             height: 100vh;
             position: fixed;
-            top: 0;
             left: 0;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            top: 0;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
         }
         nav a {
             color: white;
@@ -38,44 +37,42 @@
             font-weight: bold;
             margin: 10px 0;
             padding: 10px;
-            width: 100%;
-            text-align: center;
             transition: background 0.3s, border-radius 0.3s;
             border-radius: 5px;
+            display: block;
         }
         nav a:hover {
             background: #38761d;
             border-radius: 5px;
         }
 
-        /* Hoofdinhoud */
+        /* Hoofdcontainer */
         .container {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            margin-left: 220px; /* Ruimte voor de navigatiebalk */
-            padding: 20px;
             max-width: 1200px;
             width: 100%;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            margin-left: 220px;
         }
 
         /* Header */
         header {
             background: #38761d;
-            color: #fff;
+            color: white;
             padding: 15px;
             text-align: center;
             font-size: 26px;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            margin-left: 200px;
         }
 
-        /* Content gedeelte */
+        /* Content-wrapper */
         .content-wrapper {
             display: flex;
-            align-items: flex-start;
             gap: 20px;
+            flex-grow: 1;
         }
 
         /* Blog content */
@@ -89,10 +86,11 @@
         /* Sidebar */
         .sidebar {
             width: 300px;
-            background: #ddd;
+            background: #ddd; /* Zelfde grijs als de sfeerfotobox */
             padding: 20px;
             border-radius: 10px;
         }
+
         .sidebar img {
             width: 100%;
             height: auto;
@@ -101,21 +99,17 @@
             margin-bottom: 10px;
         }
 
-        /* Blog post */
-        .blog-post img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
+        /* Blogpost styling */
         .blog-post h1 {
             color: #38761d;
             text-align: center;
         }
+
         .blog-post p {
             color: #555;
             text-align: justify;
         }
+
         .blog-post .date {
             font-size: 0.9em;
             color: #888;
@@ -130,9 +124,10 @@
             text-align: center;
             padding: 10px;
             font-size: 12px;
-            margin-top: 20px;
+            width: 100%;
+            margin-top: 50px;
+            margin-left: 200px;
         }
-
     </style>
 </head>
 <body>
@@ -144,23 +139,28 @@
         <a href="project.html">Project</a>
         <a href="contact.html">Contact</a>
         <a href="winddatapage.html">Winddata</a>
-        <a href="grafiek.html">Grafieken</a>
     </nav>
 
-    <div class="container">
-        <header>
-            BLOG - Phantom
-        </header>
+    <header>
+        BLOG - Phantom
+    </header>
 
+    <div class="container">
         <div class="content-wrapper">
             <div class="content">
                 <article class="blog-post">
                     <img src="afbeeldingblog.jpeg" alt="Hoofdafbeelding van de blogpost">
                     <h1>Titel van de blogpost</h1>
                     <p class="date">Gepubliceerd door Phantom</p>
-                    <p>Inleiding...</p>
-                    <p>Hoofdtekst...</p>
-                    <p>Tot slot...</p>
+                    <p>
+                        Inleiding...
+                    </p>
+                    <p>
+                        Hoofdtekst...
+                    </p>
+                    <p>
+                        Tot slot...
+                    </p>
                 </article>
             </div>
 
