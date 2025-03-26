@@ -3,23 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winddata - Phantom</title>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<title>Winddata</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
         body {
             font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
             margin: 0;
             padding: 0;
-            background: #f4f4f4;
-        }
-        header {
-            background: #fff;
-            color: #38761d;
-            padding: 15px;
-            text-align: center;
-            font-size: 26px;
-            font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav {
             background: #6aa84f;
@@ -40,46 +32,34 @@
             background: #38761d;
             border-radius: 5px;
         }
- 
-        .container {
-            width: 80%;
-            margin: auto;
-            text-align: center;
-            padding: 20px;
-        }
-        table {
-            width: 100%;
-            border-collapse: collapse;
+        h2 {
+            color: #38761d;
             margin-top: 20px;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border: 3px solid #38761d;
         }
-        th, td {
-            border: 1px solid #6aa84f;
-            padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #6aa84f;
+        button {
+            background: #6aa84f;
             color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 20px;
         }
-        footer {
-            background: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+        button:hover {
+            background: #38761d;
+        }
+        canvas {
+            background: white;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            max-width: 90%;
         }
 </style>
 </head>
 <body>
-<header>
-        Winddata - Phantom
-</header>
 <nav>
 <a href="index.html">Home</a>
 <a href="over.html">Over ons</a>
@@ -88,35 +68,16 @@
 <a href="contact.html">Contact</a>
 <a href="winddata.html">Winddata</a>
 </nav>
-<div class="container">
-<h2>Live Winddata</h2>
-<div id="csv-container">Laden...</div>
-</div>
-<footer>
-&copy; 2025 Phantom. Alle rechten voorbehouden.
-</footer>
-<script>
-        async function fetchCSV() {
-            const url = "https://raw.githubusercontent.com/JohnaaQS/ICT-projecten/main/Programma/weather_data.csv";
-            try {
-                const response = await fetch(url);
-                const data = await response.text();
-                const rows = data.split("\n").map(row => row.split(","));
-                let table = "<table><tr>";
-                table += rows[0].map(header => `<th>${header}</th>`).join("") + "</tr>";
-                for (let i = 1; i < rows.length; i++) {
-                    if (rows[i].length > 1) {
-                        table += "<tr>" + rows[i].map(cell => `<td>${cell}</td>`).join("") + "</tr>";
-                    }
-                }
-                table += "</table>";
-                document.getElementById("csv-container").innerHTML = table;
-            } catch (error) {
-                console.error("Fout bij ophalen van CSV:", error);
-                document.getElementById("csv-container").innerHTML = "Er is een fout opgetreden bij het laden van de gegevens.";
-            }
-        }
-        window.onload = fetchCSV;
-</script>
+ 
+    <h2>Winddata Grafieken</h2>
+<button id="startBtn">Start</button>
+ 
+    <h3>Temperatuur Grafiek</h3>
+<canvas id="tempChart"></canvas>
+ 
+    <h3>Windsnelheid Grafiek</h3>
+<canvas id="windChart"></canvas>
+ 
+    <script src="weather_chart.js"></script>
 </body>
 </html>
