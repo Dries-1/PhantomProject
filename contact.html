@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <style>
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
@@ -17,26 +17,32 @@
             color: #000;
         }
         header {
-            background: #333;
-            color: #fff;
-            padding: 10px;
+            background: #38761d;
+            color: white;
+            padding: 15px;
             text-align: center;
-            font-size: 14px;
+            font-size: 26px;
             font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav {
-            background: #444;
-            color: #fff;
-            padding: 10px;
+            background: #6aa84f;
+            padding: 12px;
             text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            margin: 0 10px;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 8px 12px;
+            transition: background 0.3s, border-radius 0.3s;
+            border-radius: 5px;
         }
         nav a:hover {
-            color: #ffcc00;
+            background: #38761d;
+            border-radius: 5px;
         }
         .container {
             max-width: 600px;
@@ -48,21 +54,23 @@
         }
         h2 {
             text-align: center;
+            color: #38761d;
         }
         label {
             font-weight: bold;
+            color: #38761d;
         }
         input, textarea {
             width: 100%;
             padding: 10px;
             margin: 5px 0 10px;
-            border: 1px solid #ccc;
+            border: 1px solid #6aa84f;
             border-radius: 5px;
         }
         .cta-button {
             display: block;
             width: 100%;
-            background: #444;
+            background: #38761d;
             color: white;
             padding: 12px;
             text-align: center;
@@ -74,8 +82,16 @@
             border: none;
         }
         .cta-button:hover {
-            background: #ffcc00;
-            color: #000;
+            background: #6aa84f;
+        }
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            width: 100%;
+            margin-top: 50px;
         }
     </style>
     <script>
@@ -87,16 +103,17 @@
 <body>
 
     <header>
-        <h1>Project Phantom</h1>
+        Contact - Phantom
     </header>
 
     <nav>
         <a href="index.html">Home</a>
         <a href="over.html">Over ons</a>
-        <a href="blog.html">blog</a>
+        <a href="blog.html">Blog</a>
         <a href="project.html">Project</a>
         <a href="contact.html">Contact</a>
-        <a href="winddatapage.html">winddata</a>
+        <a href="winddatapage.html">Winddata</a>
+        <a href="grafiek.html">Grafieken</a>
     </nav>
 
     <div class="container">
@@ -114,6 +131,10 @@
             <button type="submit" class="cta-button">Verstuur</button>
         </form>
     </div>
+
+    <footer>
+        &copy; 2025 Phantom. Alle rechten voorbehouden.
+    </footer>
 
 </body>
 </html>
