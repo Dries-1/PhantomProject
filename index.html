@@ -21,16 +21,16 @@
             background: #f4f4f4;
             display: flex;
             flex-direction: column;
-            min-height: 100vh; /* Zorgt dat de pagina altijd minimaal de hoogte van het scherm heeft */
+            min-height: 100vh;
         }
 
         /* Header */
         header {
             background: #fff;  
             color: #38761d;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -38,7 +38,7 @@
         /* Navigatiebalk */
         nav {
             background: #6aa84f;
-            padding: 12px;
+            padding: 15px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
@@ -46,42 +46,53 @@
             color: white;
             text-decoration: none;
             font-weight: bold;
-            margin: 0 15px;
-            padding: 8px 12px;
+            margin: 0 20px;
+            padding: 10px 15px;
             transition: background 0.3s, border-radius 0.3s;
-            border-radius: 5px;
+            border-radius: 8px;
         }
         nav a:hover {
             background: #38761d;
-            border-radius: 5px;
+            border-radius: 8px;
         }
 
         /* Layout container */
         .container {
             display: flex;
-            flex: 1; /* Duwt de footer naar beneden */
-            margin: 20px;
+            flex: 1;
+            margin: 30px auto;
+            max-width: 1200px;
+            gap: 30px;
         }
 
         /* Hoofdcontent */
         .main {
             flex: 2;
-            padding: 20px;  
+            padding: 25px;
             background: #fff;
-            border-left: 5px solid #38761d;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
+            border-left: 6px solid #38761d;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .main h2 {
             color: #38761d;
+            margin-bottom: 15px;
         }
 
         /* Sidebar */
         .sidebar {
             flex: 1;
-            padding: 20px;
+            padding: 25px;
             background: #e6e6e6;
-            border-radius: 8px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .sidebar img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 10px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
@@ -90,9 +101,9 @@
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 10px 0;
-            font-size: 10px;
-            margin-top: auto; /* Zorgt dat de footer onderaan blijft */
+            padding: 15px 0;
+            font-size: 12px;
+            margin-top: auto;
         }
     </style>
 </head>
@@ -121,9 +132,9 @@
                 Neem contact met ons op en ontdek de mogelijkheden!</p>
         </section>
         <aside class="sidebar">  
-            <div style="text-align: center; margin-top: 20px;">
+            <div>
                 <a href="https://timelogify.com" target="_blank">
-                    <img src="afbeeldingblog.jpeg" style="width: 90%; max-width: 250px; height: auto;"> 
+                    <img src="afbeeldingblog.jpeg" alt="Duurzame energie afbeelding"> 
                 </a>
             </div>
         </aside>
