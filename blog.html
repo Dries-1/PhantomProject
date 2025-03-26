@@ -9,23 +9,30 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <style>
         /* Algemene stijl */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             background: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         /* Header */
         header {
             background: #38761d;
             color: #fff;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
-            font-size: 26px;
+            font-size: 28px;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
         /* Navigatiebalk */
@@ -40,7 +47,7 @@
             text-decoration: none;
             font-weight: bold;
             margin: 0 15px;
-            padding: 8px 12px;
+            padding: 10px 15px;
             transition: background 0.3s, border-radius 0.3s;
             border-radius: 5px;
         }
@@ -49,36 +56,68 @@
             border-radius: 5px;
         }
 
-        /* Hoofdinhoud */
+        /* Hoofdcontainer */
         .container {
             display: flex;
-            max-width: 1200px;
+            max-width: 1100px;
             width: 100%;
-            margin: 20px auto;
-            flex: 1;
+            margin: 40px auto;
+            gap: 30px;
         }
 
-        /* Content gedeelte */
-        .content-wrapper {
-            display: flex;
-            align-items: stretch;
-            gap: 20px;
-            flex-grow: 1;
-        }
-
+        /* Blog content */
         .content {
-            padding: 20px;
+            flex: 2;
+            padding: 30px;
             background: #fff;
             border-radius: 10px;
-            flex-grow: 2;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .content img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .blog-post h1 {
+            color: #38761d;
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .blog-post .date {
+            font-size: 14px;
+            color: #888;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-post p {
+            color: #444;
+            font-size: 16px;
+            margin-bottom: 15px;
+            text-align: justify;
         }
 
         /* Sidebar */
         .sidebar {
-            width: 300px;
-            background: #ddd;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar .sidebar-item {
+            background: #fff;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
         }
 
         .sidebar img {
@@ -86,24 +125,12 @@
             height: auto;
             max-height: 250px;
             object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Blog post */
-        .blog-post h1 {
-            color: #38761d;
-            text-align: center;
-        }
-
-        .blog-post p {
-            color: #555;
-            text-align: justify;
-        }
-
-        .blog-post .date {
-            font-size: 0.9em;
-            color: #888;
-            text-align: center;
-            margin-bottom: 20px;
+        .sidebar img:hover {
+            transform: scale(1.05);
         }
 
         /* Footer */
@@ -111,15 +138,26 @@
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 15px 0;
             font-size: 12px;
-            width: 100%;
             margin-top: auto;
         }
 
-        /* Extra witruimte onderaan */
-        .spacer {
-            height: 100px;
+        /* Responsief design */
+        @media (max-width: 900px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .sidebar {
+                width: 100%;
+            }
+
+            .content {
+                padding: 20px;
+            }
         }
     </style>
 </head>
@@ -128,43 +166,39 @@
         BLOG - Phantom
     </header>
 
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="over.html">Over ons</a>
+        <a href="blog.html">Blog</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact</a>
+        <a href="winddatapage.html">Winddata</a>
+    </nav>
+
     <div class="container">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="over.html">Over ons</a>
-            <a href="blog.html">Blog</a>
-            <a href="project.html">Project</a>
-            <a href="contact.html">Contact</a>
-            <a href="winddatapage.html">Winddata</a>
-        </nav>
+        <div class="content">
+            <article class="blog-post">
+                <img src="afbeeldingblog.jpeg" alt="Hoofdafbeelding van de blogpost">
+                <h1>Titel van de blogpost</h1>
+                <p class="date">Gepubliceerd door Phantom</p>
+                <p>Inleiding...</p>
+                <p>Hoofdtekst...</p>
+                <p>Tot slot...</p>
+            </article>
+        </div>
 
-        <div class="content-wrapper">
-            <div class="content">
-                <article class="blog-post">
-                    <img src="afbeeldingblog.jpeg" alt="Hoofdafbeelding van de blogpost">
-                    <h1>Titel van de blogpost</h1>
-                    <p class="date">Gepubliceerd door Phantom</p>
-                    <p>
-                        Inleiding...
-                    </p>
-                    <p>
-                        Hoofdtekst...
-                    </p>
-                    <p>
-                        Tot slot...
-                    </p>
-                </article>
-            </div>
-
-            <div class="sidebar">
+        <div class="sidebar">
+            <div class="sidebar-item">
                 <img src="sfeerbeeldbuitencrop.jpg" alt="Sfeerbeeld buiten">
+            </div>
+            <div class="sidebar-item">
                 <img src="sfeerbeeldzijkant.jpg" alt="Sfeerbeeld 2">
+            </div>
+            <div class="sidebar-item">
                 <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
             </div>
         </div>
     </div>
-
-    <div class="spacer"></div>
 
     <footer>
         &copy; 2025 Phantom. Alle rechten voorbehouden.
