@@ -102,6 +102,8 @@
 
         max-width: 90%;
 
+        height: 400px; /* Vaste hoogte om uitrekken te voorkomen */
+
     }
 
     button {
@@ -162,7 +164,7 @@
 <a href="blog.html">Blog</a>
 <a href="project.html">Project</a>
 <a href="contact.html">Contact</a>
-<a href="winddatapage.html">Winddata</a>
+<a href="winddata.html">Winddata</a>
 <a href="grafiek.html">Grafieken</a>
 </nav>
 <div class="container">
@@ -176,82 +178,7 @@
 <footer>
 &copy; 2025 Phantom. Alle rechten voorbehouden.
 </footer>
-<script>
-
-    document.getElementById("startBtn").addEventListener("click", loadCharts);
- 
-    async function loadCharts() {
-
-        const url = "https://raw.githubusercontent.com/JohnaaQS/ICT-projecten/main/Programma/weather_data.csv";
-
-        try {
-
-            const response = await fetch(url);
-
-            const data = await response.text();
-
-            const rows = data.split("\n").map(row => row.split(","));
-
-            const labels = rows.slice(1).map(row => row[0]); // Datum/tijd
-
-            const tempData = rows.slice(1).map(row => parseFloat(row[1])); // Temperatuur
-
-            const windData = rows.slice(1).map(row => parseFloat(row[2])); // Windsnelheid
-
-            createChart("tempChart", "Temperatuur (°C)", labels, tempData, "rgba(255, 99, 132, 0.6)");
-
-            createChart("windChart", "Windsnelheid (km/h)", labels, windData, "rgba(54, 162, 235, 0.6)");
-
-        } catch (error) {
-
-            console.error("Fout bij ophalen van CSV:", error);
-
-        }
-
-    }
- 
-    function createChart(canvasId, label, labels, data, color) {
-
-        const ctx = document.getElementById(canvasId).getContext("2d");
-
-        new Chart(ctx, {
-
-            type: "line",
-
-            data: {
-
-                labels: labels,
-
-                datasets: [{
-
-                    label: label,
-
-                    data: data,
-
-                    backgroundColor: color,
-
-                    borderColor: color,
-
-                    borderWidth: 2,
-
-                    fill: false,
-
-                }]
-
-            },
-
-            options: {
-
-                responsive: true,
-
-                maintainAspectRatio: false
-
-            }
-
-        });
-
-    }
-</script>
+<script src="grafiek.js"></script>
 </body>
 </html>
 

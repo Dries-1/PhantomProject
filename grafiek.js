@@ -1,90 +1,173 @@
-document.getElementById("startBtn").addEventListener("click", async function() {
-    const url = "https://raw.githubusercontent.com/JohnaaQS/ICT-projecten/main/Programma/weather_data.csv";
+const csvUrl = "https://raw.githubusercontent.com/JohnaaQS/ICT-projecten/main/Programma/weather_data.csv";
  
-    try {
-        const response = await fetch(url);
-        const data = await response.text();
-        const rows = data.split("\n").map(row => row.split(","));
-       
-        const tijd = [];
-        const temperatuur = [];
-        const apparaatTemp = [];
-        const windsnelheid = [];
+async function fetchData() {
+
+    const response = await fetch(csvUrl);
+
+    const data = await response.text();
  
-        // Kolomnamen matchen en data verwerken
-        const headers = rows[0].map(header => header.trim());
-        const tijdIndex = headers.indexOf("Tijdstip");
-        const tempIndex = headers.indexOf("Temperatuur (°C)");
-        const appTempIndex = headers.indexOf("Apparaat Temperatuur (°C)");
-        const windIndex = headers.indexOf("Windsnelheid (m/s)");
+    const rows = data.split("\n").slice(1); // Eerste rij (headers) overslaan
+
+    const tijdstip = [];
+
+    const tempApparaat = [];
+
+    const tempOmgeving = [];
+
+    const windsnelheid = [];
  
-        for (let i = 1; i < rows.length; i++) {
-            const row = rows[i];
+    rows.forEach(row => {
+
+        const columns = row.split(",");
+
+        if (columns.length > 3) {  // Zorg dat er genoeg kolommen zijn
+
+            const tijd = columns[0].trim();
+
+            const apparaatTemp = parseFloat(columns[1].trim());
+
+            const omgevingTemp = parseFloat(columns[2].trim());
+
+            const wind = parseFloat(columns[3].trim());
  
-            if (row.length > 1) {
-                tijd.push(row[tijdIndex]);
-                temperatuur.push(parseFloat(row[tempIndex]) || null);
-                apparaatTemp.push(parseFloat(row[appTempIndex]) || null);
-                windsnelheid.push(parseFloat(row[windIndex]) || null);
+            if (!isNaN(apparaatTemp) && !isNaN(omgevingTemp) && !isNaN(wind)) {
+
+                tijdstip.push(tijd);
+
+                tempApparaat.push(apparaatTemp);
+
+                tempOmgeving.push(omgevingTemp);
+
+                windsnelheid.push(wind);
+
             }
+
         }
+
+    });
  
-        // Temperatuur grafiek genereren
-        const tempCtx = document.getElementById("tempChart").getContext("2d");
-        new Chart(tempCtx, {
-            type: "line",
-            data: {
-                labels: tijd,
-                datasets: [
-                    {
-                        label: "Apparaat Temp (°C)",
-                        data: apparaatTemp,
-                        borderColor: "red",
-                        fill: false
-                    },
-                    {
-                        label: "Omgeving Temp (°C)",
-                        data: temperatuur,
-                        borderColor: "blue",
-                        fill: false
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: { min: 0, max: 50 }
+    return { tijdstip, tempApparaat, tempOmgeving, windsnelheid };
+
+}
+ 
+async function renderCharts() {
+
+    const data = await fetchData();
+ 
+    const ctxTemp = document.getElementById('tempChart').getContext('2d');
+
+    new Chart(ctxTemp, {
+
+        type: 'line',
+
+        data: {
+
+            labels: data.tijdstip,
+
+            datasets: [
+
+                {
+
+                    label: 'Apparaat Temp (°C)',
+
+                    data: data.tempApparaat,
+
+                    borderColor: 'red',
+
+                    backgroundColor: 'rgba(255, 0, 0, 0.2)',
+
+                    fill: true
+
+                },
+
+                {
+
+                    label: 'Omgeving Temp (°C)',
+
+                    data: data.tempOmgeving,
+
+                    borderColor: 'blue',
+
+                    backgroundColor: 'rgba(0, 0, 255, 0.2)',
+
+                    fill: true
+
                 }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false, // Nu correct
+
+            scales: {
+
+                x: { ticks: { autoSkip: true, maxTicksLimit: 10 } },
+
+                y: { min: 0, max: 50 }
+
             }
-        });
+
+        }
+
+    });
  
-        // Windsnelheid grafiek genereren
-        const windCtx = document.getElementById("windChart").getContext("2d");
-        new Chart(windCtx, {
-            type: "line",
-            data: {
-                labels: tijd,
-                datasets: [
-                    {
-                        label: "Windsnelheid (m/s)",
-                        data: windsnelheid,
-                        borderColor: "purple",
-                        fill: false
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                scales: {
-                    y: { min: 0, max: 20 }
+    const ctxWind = document.getElementById('windChart').getContext('2d');
+
+    new Chart(ctxWind, {
+
+        type: 'line',
+
+        data: {
+
+            labels: data.tijdstip,
+
+            datasets: [
+
+                {
+
+                    label: 'Windsnelheid (m/s)',
+
+                    data: data.windsnelheid,
+
+                    borderColor: 'purple',
+
+                    backgroundColor: 'rgba(128, 0, 128, 0.2)',
+
+                    fill: true
+
                 }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false, // Nu correct
+
+            scales: {
+
+                x: { ticks: { autoSkip: true, maxTicksLimit: 10 } },
+
+                y: { min: 0, max: 20 }
+
             }
-        });
+
+        }
+
+    });
+
+}
  
-    } catch (error) {
-        console.error("Fout bij ophalen van CSV:", error);
-        alert("Er is een fout opgetreden bij het laden van de gegevens.");
-    }
-});
- 
+// Start de grafieken pas als op de knop wordt gedrukt
+
+document.getElementById("startBtn").addEventListener("click", renderCharts);
+
  
