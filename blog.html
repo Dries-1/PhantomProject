@@ -19,17 +19,18 @@
 
         /* Header */
         header {
-            background: #2a6d4f; /* Groene header kleur */
-            color: #fff;
-            padding: 20px;
+            background: #fff;
+            color: #38761d;
+            padding: 15px;
             text-align: center;
-            font-size: 24px;
+            font-size: 26px;
             font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         /* Navigatiebalk */
         nav {
-            background: #1f4c3d; /* Groene nav kleur */
+            background: #6aa84f;
             padding: 12px;
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -44,58 +45,39 @@
             border-radius: 5px;
         }
         nav a:hover {
-            background: #38761d; /* Groene hover kleur */
+            background: #38761d;
             border-radius: 5px;
         }
 
         /* Hoofdinhoud */
         .container {
             display: flex;
+            flex-direction: column;
+            align-items: center;
             max-width: 1200px;
-            width: 100%;
             margin: 20px auto;
-            flex: 1;
-        }
-
-        /* Content gedeelte */
-        .content-wrapper {
-            display: flex;
-            align-items: stretch;
-            gap: 20px;
-            flex-grow: 1;
         }
 
         .content {
-            padding: 20px;
             background: #fff;
-            border-radius: 10px;
-            flex-grow: 2;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 300px;
-            background: #ddd;
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
         }
 
-        .sidebar img {
+        .blog-post img {
             width: 100%;
-            height: auto;
-            max-height: 250px;
+            max-height: 400px;
             object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Blog post */
         .blog-post h1 {
-            color: #2a6d4f; /* Groene tekstkleur voor de titel */
+            color: #38761d;
             text-align: center;
-        }
-
-        .blog-post p {
-            color: #555;
-            text-align: justify;
         }
 
         .blog-post .date {
@@ -105,15 +87,38 @@
             margin-bottom: 20px;
         }
 
+        .blog-post p {
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .sidebar img {
+            width: 250px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border: 3px solid #6aa84f;
+        }
+
         /* Footer */
         footer {
-            background: #2a6d4f; /* Groene footer kleur */
+            background: #333;
             color: #fff;
             text-align: center;
-            padding: 10px;
-            font-size: 12px;
+            padding: 10px 0;
+            font-size: 10px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            margin-top: auto;
         }
     </style>
 </head>
@@ -121,40 +126,37 @@
     <header>
         BLOG - Phantom
     </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="over.html">Over ons</a>
+        <a href="blog.html">Blog</a>
+        <a href="project.html">Project</a>
+        <a href="contact.html">Contact</a>
+        <a href="winddatapage.html">Winddata</a>
+    </nav>
 
     <div class="container">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="over.html">Over ons</a>
-            <a href="blog.html">Blog</a>
-            <a href="project.html">Project</a>
-            <a href="contact.html">Contact</a>
-            <a href="winddatapage.html">Winddata</a>
-        </nav>
+        <div class="content">
+            <article class="blog-post">
+                <img src="afbeeldingblog.jpeg" alt="Hoofdafbeelding van de blogpost">
+                <h1>Titel van de blogpost</h1>
+                <p class="date">Gepubliceerd door Phantom</p>
+                <p>
+                    Inleiding...
+                </p>
+                <p>
+                    Hoofdtekst...
+                </p>
+                <p>
+                    Tot slot...
+                </p>
+            </article>
+        </div>
 
-        <div class="content-wrapper">
-            <div class="content">
-                <article class="blog-post">
-                    <img src="afbeeldingblog.jpeg" alt="Hoofdafbeelding van de blogpost">
-                    <h1>Titel van de blogpost</h1>
-                    <p class="date">Gepubliceerd door Phantom</p>
-                    <p>
-                        Inleiding...
-                    </p>
-                    <p>
-                        Hoofdtekst...
-                    </p>
-                    <p>
-                        Tot slot...
-                    </p>
-                </article>
-            </div>
-
-            <div class="sidebar">
-                <img src="sfeerbeeldbuitencrop.jpg" alt="Sfeerbeeld buiten">
-                <img src="sfeerbeeldzijkant.jpg" alt="Sfeerbeeld 2">
-                <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
-            </div>
+        <div class="sidebar">
+            <img src="sfeerbeeldbuitencrop.jpg" alt="Sfeerbeeld buiten">
+            <img src="sfeerbeeldzijkant.jpg" alt="Sfeerbeeld 2">
+            <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
         </div>
     </div>
 
