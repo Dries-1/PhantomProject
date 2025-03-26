@@ -3,63 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winddata</title>
+<title>Winddata - Phantom</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
+
         body {
+
             font-family: Arial, sans-serif;
-            background: #f4f4f4;
-            text-align: center;
+
             margin: 0;
+
             padding: 0;
+
+            background: #f4f4f4;
+
+            display: flex;
+
         }
-        nav {
-            background: #6aa84f;
-            padding: 12px;
+
+        .main-container {
+
+            display: flex;
+
+            width: 100%;
+
+        }
+
+        .left {
+
+            width: 70%;
+
+            padding: 20px;
+
+        }
+
+        .right {
+
+            width: 30%;
+
+            padding: 20px;
+
             text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
         }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 0 15px;
-            padding: 8px 12px;
-            transition: background 0.3s, border-radius 0.3s;
-            border-radius: 5px;
+
+        header, nav, footer {
+
+            width: 100%;
+
+            text-align: center;
+
         }
-        nav a:hover {
-            background: #38761d;
-            border-radius: 5px;
-        }
-        h2 {
-            color: #38761d;
-            margin-top: 20px;
-        }
-        button {
+
+        nav {
+
             background: #6aa84f;
+
+            padding: 12px;
+
+        }
+
+        nav a {
+
             color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            margin: 0 15px;
+
+            padding: 8px 12px;
+
             border-radius: 5px;
-            margin: 20px;
+
         }
-        button:hover {
+
+        nav a:hover {
+
             background: #38761d;
+
         }
-        canvas {
-            background: white;
-            border-radius: 10px;
-            padding: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+
             margin-top: 20px;
-            max-width: 90%;
+
+            background: white;
+
+            border: 3px solid #38761d;
+
+        }
+
+        th, td {
+
+            border: 1px solid #6aa84f;
+
+            padding: 10px;
+
+            text-align: left;
+
+        }
+
+        th {
+
+            background-color: #6aa84f;
+
+            color: white;
+
+        }
+
+        button {
+
+            background: #6aa84f;
+
+            color: white;
+
+            border: none;
+
+            padding: 10px 20px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            border-radius: 5px;
+
+            margin-top: 20px;
+
+        }
+
+        button:hover {
+
+            background: #38761d;
+
+        }
+
+        canvas {
+
+            background: white;
+
+            border-radius: 10px;
+
+            padding: 10px;
+
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+            margin-top: 20px;
+
+            max-width: 100%;
+
         }
 </style>
 </head>
 <body>
+<div class="main-container">
+<div class="left">
+<header>
+<h1>Winddata - Phantom</h1>
+</header>
 <nav>
 <a href="index.html">Home</a>
 <a href="over.html">Over ons</a>
@@ -68,16 +175,22 @@
 <a href="contact.html">Contact</a>
 <a href="winddata.html">Winddata</a>
 </nav>
- 
-    <h2>Winddata Grafieken</h2>
-<button id="startBtn">Start</button>
- 
-    <h3>Temperatuur Grafiek</h3>
+<h2>Live Winddata</h2>
+<div id="csv-container">Laden...</div>
+<h3>Temperatuur Grafiek</h3>
 <canvas id="tempChart"></canvas>
- 
-    <h3>Windsnelheid Grafiek</h3>
+<h3>Windsnelheid Grafiek</h3>
 <canvas id="windChart"></canvas>
- 
-    <script src="weather_chart.js"></script>
+</div>
+<div class="right">
+<button id="startBtn">Start</button>
+</div>
+</div>
+<footer>
+&copy; 2025 Phantom. Alle rechten voorbehouden.
+</footer>
+<script src="weather_chart.js"></script>
 </body>
 </html>
+
+ 

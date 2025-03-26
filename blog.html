@@ -16,7 +16,7 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             background: #f4f4f4;
             display: flex;
@@ -28,11 +28,11 @@
         header {
             background: #38761d;
             color: #fff;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            font-size: 28px;
+            font-size: 26px;
             font-weight: bold;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         /* Navigatiebalk */
@@ -42,36 +42,40 @@
             text-align: center;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
+
         nav a {
             color: white;
             text-decoration: none;
             font-weight: bold;
             margin: 0 15px;
-            padding: 10px 15px;
+            padding: 8px 12px;
             transition: background 0.3s, border-radius 0.3s;
             border-radius: 5px;
         }
+
         nav a:hover {
             background: #38761d;
             border-radius: 5px;
         }
 
-        /* Hoofdcontainer */
+        /* Hoofdinhoud */
         .container {
             display: flex;
-            max-width: 1100px;
+            max-width: 1200px;
             width: 100%;
-            margin: 40px auto;
-            gap: 30px;
+            margin: 20px auto;
+            flex: 1;
+            gap: 20px;
         }
 
-        /* Blog content */
+        /* Content */
         .content {
             flex: 2;
-            padding: 30px;
+            padding: 20px;
             background: #fff;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-left: 5px solid #38761d;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .content img {
@@ -79,54 +83,47 @@
             max-height: 400px;
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-bottom: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .blog-post h1 {
             color: #38761d;
             text-align: center;
-            font-size: 28px;
-            margin-bottom: 10px;
+            font-size: 24px;
+            margin-bottom: 5px;
         }
 
         .blog-post .date {
             font-size: 14px;
             color: #888;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .blog-post p {
             color: #444;
-            font-size: 16px;
-            margin-bottom: 15px;
             text-align: justify;
+            margin-bottom: 15px;
         }
 
         /* Sidebar */
         .sidebar {
             flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .sidebar .sidebar-item {
-            background: #fff;
             padding: 20px;
+            background: #e6e6e6;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar img {
             width: 100%;
             height: auto;
-            max-height: 250px;
+            max-height: 200px;
             object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s ease-in-out;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         .sidebar img:hover {
@@ -138,7 +135,7 @@
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px;
             font-size: 12px;
             margin-top: auto;
         }
@@ -147,7 +144,6 @@
         @media (max-width: 900px) {
             .container {
                 flex-direction: column;
-                align-items: center;
                 text-align: center;
             }
 
@@ -188,15 +184,9 @@
         </div>
 
         <div class="sidebar">
-            <div class="sidebar-item">
-                <img src="sfeerbeeldbuitencrop.jpg" alt="Sfeerbeeld buiten">
-            </div>
-            <div class="sidebar-item">
-                <img src="sfeerbeeldzijkant.jpg" alt="Sfeerbeeld 2">
-            </div>
-            <div class="sidebar-item">
-                <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
-            </div>
+            <img src="sfeerbeeldbuitencrop.jpg" alt="Sfeerbeeld buiten">
+            <img src="sfeerbeeldzijkant.jpg" alt="Sfeerbeeld 2">
+            <img src="sfeerbeeld3.jpg" alt="Sfeerbeeld 3">
         </div>
     </div>
 
