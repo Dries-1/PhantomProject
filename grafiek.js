@@ -1,141 +1,90 @@
 document.getElementById("startBtn").addEventListener("click", async function() {
-
     const url = "https://raw.githubusercontent.com/JohnaaQS/ICT-projecten/main/Programma/weather_data.csv";
-
+ 
     try {
-
         const response = await fetch(url);
-
         const data = await response.text();
-
         const rows = data.split("\n").map(row => row.split(","));
-
+       
         const tijd = [];
-
-        const tempApparaat = [];
-
-        const tempOmgeving = [];
-
+        const temperatuur = [];
+        const apparaatTemp = [];
         const windsnelheid = [];
-
+ 
+        // Kolomnamen matchen en data verwerken
+        const headers = rows[0].map(header => header.trim());
+        const tijdIndex = headers.indexOf("Tijdstip");
+        const tempIndex = headers.indexOf("Temperatuur (°C)");
+        const appTempIndex = headers.indexOf("Apparaat Temperatuur (°C)");
+        const windIndex = headers.indexOf("Windsnelheid (m/s)");
+ 
         for (let i = 1; i < rows.length; i++) {
-
-            if (rows[i].length > 3) {
-
-                tijd.push(rows[i][0]);
-
-                tempApparaat.push(parseFloat(rows[i][1]) || 0);
-
-                tempOmgeving.push(parseFloat(rows[i][2]) || 0);
-
-                windsnelheid.push(parseFloat(rows[i][3]) || 0);
-
+            const row = rows[i];
+ 
+            if (row.length > 1) {
+                tijd.push(row[tijdIndex]);
+                temperatuur.push(parseFloat(row[tempIndex]) || null);
+                apparaatTemp.push(parseFloat(row[appTempIndex]) || null);
+                windsnelheid.push(parseFloat(row[windIndex]) || null);
             }
-
         }
  
-        const ctxTemp = document.getElementById("tempChart").getContext("2d");
-
-        new Chart(ctxTemp, {
-
+        // Temperatuur grafiek genereren
+        const tempCtx = document.getElementById("tempChart").getContext("2d");
+        new Chart(tempCtx, {
             type: "line",
-
             data: {
-
                 labels: tijd,
-
                 datasets: [
-
                     {
-
                         label: "Apparaat Temp (°C)",
-
-                        data: tempApparaat,
-
+                        data: apparaatTemp,
                         borderColor: "red",
-
                         fill: false
-
                     },
-
                     {
-
                         label: "Omgeving Temp (°C)",
-
-                        data: tempOmgeving,
-
+                        data: temperatuur,
                         borderColor: "blue",
-
                         fill: false
-
                     }
-
                 ]
-
             },
-
             options: {
-
                 responsive: true,
-
                 scales: {
-
                     y: { min: 0, max: 50 }
-
                 }
-
             }
-
         });
  
-        const ctxWind = document.getElementById("windChart").getContext("2d");
-
-        new Chart(ctxWind, {
-
+        // Windsnelheid grafiek genereren
+        const windCtx = document.getElementById("windChart").getContext("2d");
+        new Chart(windCtx, {
             type: "line",
-
             data: {
-
                 labels: tijd,
-
                 datasets: [
-
                     {
-
                         label: "Windsnelheid (m/s)",
-
                         data: windsnelheid,
-
                         borderColor: "purple",
-
                         fill: false
-
                     }
-
                 ]
-
             },
-
             options: {
-
                 responsive: true,
-
                 scales: {
-
                     y: { min: 0, max: 20 }
-
                 }
-
             }
-
         });
-
+ 
     } catch (error) {
-
         console.error("Fout bij ophalen van CSV:", error);
-
+        alert("Er is een fout opgetreden bij het laden van de gegevens.");
     }
-
 });
-
+ 
  

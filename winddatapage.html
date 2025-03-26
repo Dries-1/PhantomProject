@@ -11,48 +11,7 @@
             margin: 0;
             padding: 0;
             background: #f4f4f4;
-            display: flex;
         }
-
-        /* Navigatiebalk links */
-        nav {
-            background: #6aa84f;
-            padding: 20px;
-            width: 200px;
-            height: 100vh;
-            position: fixed;
-            top: 0;
-            left: 0;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            margin: 10px 0;
-            padding: 10px;
-            width: 100%;
-            text-align: center;
-            transition: background 0.3s, border-radius 0.3s;
-            border-radius: 5px;
-        }
-        nav a:hover {
-            background: #38761d;
-            border-radius: 5px;
-        }
-
-        /* Hoofdinhoud */
-        .container {
-            flex: 1;
-            margin-left: 220px; /* Ruimte voor de navigatiebalk */
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Header */
         header {
             background: #fff;
             color: #38761d;
@@ -61,10 +20,33 @@
             font-size: 26px;
             font-weight: bold;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
         }
-
-        /* Tabelstijl */
+        nav {
+            background: #6aa84f;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 15px;
+            padding: 8px 12px;
+            transition: background 0.3s, border-radius 0.3s;
+            border-radius: 5px;
+        }
+        nav a:hover {
+            background: #38761d;
+            border-radius: 5px;
+        }
+ 
+        .container {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 20px;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -82,44 +64,37 @@
             background-color: #6aa84f;
             color: white;
         }
-
-        /* Footer (nu dynamisch onder content) */
         footer {
             background: #333;
             color: #fff;
             text-align: center;
-            padding: 10px;
-            font-size: 12px;
+            padding: 10px 0;
+            font-size: 10px;
+            position: fixed;
+            bottom: 0;
             width: 100%;
-            margin-top: 20px;
         }
-
 </style>
 </head>
 <body>
-
-<nav>
-    <a href="index.html">Home</a>
-    <a href="over.html">Over ons</a>
-    <a href="blog.html">Blog</a>
-    <a href="project.html">Project</a>
-    <a href="contact.html">Contact</a>
-    <a href="winddata.html">Winddata</a>
-</nav>
-
-<div class="container">
-    <header>
+<header>
         Winddata - Phantom
-    </header>
-
-    <h2>Live Winddata</h2>
-    <div id="csv-container">Laden...</div>
+</header>
+<nav>
+<a href="index.html">Home</a>
+<a href="over.html">Over ons</a>
+<a href="blog.html">Blog</a>
+<a href="project.html">Project</a>
+<a href="contact.html">Contact</a>
+<a href="winddata.html">Winddata</a>
+</nav>
+<div class="container">
+<h2>Live Winddata</h2>
+<div id="csv-container">Laden...</div>
 </div>
-
 <footer>
-    &copy; 2025 Phantom. Alle rechten voorbehouden.
+&copy; 2025 Phantom. Alle rechten voorbehouden.
 </footer>
-
 <script>
         async function fetchCSV() {
             const url = "https://raw.githubusercontent.com/JohnaaQS/ICT-projecten/main/Programma/weather_data.csv";
@@ -143,6 +118,7 @@
         }
         window.onload = fetchCSV;
 </script>
-
 </body>
 </html>
+
+ 
