@@ -8,13 +8,21 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
             margin: 0;
             padding: 0;
+            height: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
             line-height: 1.6;
             background-color: #f4f4f4;
             color: #000;
+            display: flex;
+            flex-direction: column;
         }
         header {
             background: #2E7D32;
@@ -52,6 +60,7 @@
             border-radius: 10px;
             box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
             text-align: center;
+            flex: 1;
         }
         h2 {
             color: #38761d;
@@ -76,7 +85,6 @@
             padding: 10px;
             font-size: 12px;
             width: 100%;
-            margin-top: 50px;
         }
     </style>
 </head>
